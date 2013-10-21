@@ -4,9 +4,23 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.json
   def index
+    if params[:sort]
+      session[:sort] = params[:sort]
+    end
+
+    if params[:ratings]
+      session[:ratings] = params[:ratings]
+    else
+      if session[:ratings]
+        redirect_to movies_path(Hash[session[:ratings].map { |k, v| ["ratings[#{k}]", v]}])
+      else
+        session[:ratings] = Hash[Movie.all_ratings.map {|r| [r, 1]}]
+      end
+    end
+
     @movies = Movie.all
-    @movies = Movie.order params[:sort] if params[:sort]
-    @movies = @movies.where(rating: params[:ratings].keys) if params[:ratings]
+    @movies = Movie.order session[:sort]
+    @movies = @movies.where(rating: session[:ratings].keys)
     @all_ratings = Movie.all_ratings
   end
 

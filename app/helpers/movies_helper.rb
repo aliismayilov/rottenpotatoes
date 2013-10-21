@@ -5,10 +5,6 @@ module MoviesHelper
   end
 
   def checked_rating?(rating)
-    if params[:ratings]
-      params[:ratings].keys.include? rating
-    else
-      true
-    end
+    session[:ratings].keys.include? rating
   end
 end
