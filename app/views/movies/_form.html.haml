@@ -1,0 +1,14 @@
+%h1 Create New Movie
+
+= form_for @movie do |f|
+
+  = f.label :title
+  = f.text_field :title
+
+  = f.label :rating
+  = f.select :rating, ['G','PG','PG-13','R','NC-17']
+
+  = f.label :release_date
+  = f.date_select :release_date
+
+  = f.submit 'Save Changes'
