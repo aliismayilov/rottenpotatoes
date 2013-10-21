@@ -43,3 +43,9 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+group :development do
+  gem "pry", "~> 0.9.12.2"
+end
+
+gem "haml", "~> 4.0.3"
