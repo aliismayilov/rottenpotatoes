@@ -4,7 +4,10 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.json
   def index
-    @movies = Movie.order params[:sort]
+    @movies = Movie.all
+    @movies = Movie.order params[:sort] if params[:sort]
+    @movies = @movies.where(rating: params[:ratings].keys) if params[:ratings]
+    @all_ratings = Movie.all_ratings
   end
 
   # GET /movies/1

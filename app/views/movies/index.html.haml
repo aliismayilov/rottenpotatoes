@@ -1,5 +1,13 @@
 %h2 All Movies
 
+= form_tag movies_path, method: :get, class: 'form-inline', id: 'ratings_form' do
+  %span Include:
+  - @all_ratings.each do |rating|
+    .form-group
+      = rating
+      = check_box_tag "ratings[#{rating}]", 1, checked_rating?(rating), id: "ratings_#{rating}"
+  = submit_tag 'Refresh', class: 'btn btn-info', id: 'ratings_submit'
+
 %table#movies.table
   %thead
     %tr
