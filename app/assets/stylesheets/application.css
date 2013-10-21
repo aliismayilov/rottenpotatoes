@@ -12,3 +12,7 @@
  *= require bootstrap/dist/css/bootstrap
  *= require_tree .
  */
+
+table#movies th.hilite {
+  background-color: yellow;
+}
