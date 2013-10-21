@@ -1,0 +1,22 @@
+{
+  "name": "rottenpotatoes",
+  "version": "0.0.1",
+  "authors": [
+    "Ali Ismayilov <ali@ismailov.info>"
+  ],
+  "description": "homework for edx saas course",
+  "license": "MIT",
+  "homepage": "http://immense-castle-5999.herokuapp.com/",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/assets/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.0.0"
+  }
+}
