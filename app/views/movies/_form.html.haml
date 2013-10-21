@@ -1,14 +1,15 @@
-%h1 Create New Movie
-
 = form_for @movie do |f|
+  .form-group
+    = f.label :title
+    = f.text_field :title, class: 'form-control'
 
-  = f.label :title
-  = f.text_field :title
+  .form-group
+    = f.label :rating
+    = f.select :rating, ['G','PG','PG-13','R','NC-17'], class: 'form-control'
 
-  = f.label :rating
-  = f.select :rating, ['G','PG','PG-13','R','NC-17']
+  .form-group
+    = f.label :release_date
+    = f.date_select :release_date, class: 'form-control'
 
-  = f.label :release_date
-  = f.date_select :release_date
-
-  = f.submit 'Save Changes'
+  .form-group
+    = f.submit 'Save Changes', class: 'btn btn-default'
