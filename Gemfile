@@ -56,6 +56,7 @@ end
 group :test do
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
+  gem 'launchy'
 end
 
 gem "haml", "~> 4.0.3"
