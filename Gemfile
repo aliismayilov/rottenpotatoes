@@ -44,13 +44,13 @@ end
 # gem 'debugger', group: [:development, :test]
 
 group :development do
-  gem "pry", "~> 0.9.12.2"
   gem "better_errors"
   gem "binding_of_caller"
 end
 
 group :development, :test do
   gem 'sqlite3'
+  gem "pry", "~> 0.9.12.2"
 end
 
 group :test do
