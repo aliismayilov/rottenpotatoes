@@ -4,6 +4,10 @@
     = f.text_field :title, class: 'form-control'
 
   .form-group
+    = f.label :director
+    = f.text_field :director, class: 'form-control'
+
+  .form-group
     = f.label :rating
     = f.select :rating, ['G','PG','PG-13','R','NC-17'], class: 'form-control'
 
@@ -12,4 +16,4 @@
     = f.date_select :release_date, class: 'form-control'
 
   .form-group
-    = f.submit 'Save Changes', class: 'btn btn-default'
+    = f.submit 'Update Movie Info', class: 'btn btn-default'

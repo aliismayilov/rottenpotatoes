@@ -6,6 +6,7 @@ Given /^the following movies exist:$/ do |table|
   end
 end
 
-Then(/^the director of "(.*?)" should be "(.*?)"$/) do |movie_name, director|
-  pending # express the regexp above with the code you wish you had
+Then /^the director of "(.*?)" should be "(.*?)"$/ do |movie_title, director|
+  movie = Movie.find_by title: movie_title
+  movie.director.should == director
 end

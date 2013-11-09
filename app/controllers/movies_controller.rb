@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :set_movie, only: [:show, :edit, :update, :destroy]
+  before_action :set_movie, only: [:show, :edit, :update, :destroy, :similar]
 
   # GET /movies
   # GET /movies.json
@@ -78,6 +78,16 @@ class MoviesController < ApplicationController
     end
   end
 
+  def similar
+    @movies = @movie.similar_movies
+
+    if @movies
+      render "similar"
+    else
+      redirect_to :root, notice: "'#{@movie.title}' has no director info"
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_movie
@@ -86,6 +96,6 @@ class MoviesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def movie_params
-      params.require(:movie).permit(:title, :rating, :description, :release_date)
+      params.require(:movie).permit(:title, :rating, :description, :release_date, :director)
     end
 end
