@@ -58,6 +58,7 @@ group :development, :test do
   gem "pry", "~> 0.9.12.2"
   gem 'rspec-rails' 
   gem 'simplecov'
+  gem 'factory_girl_rails'
 end
 
 gem "haml", "~> 4.0.3"
