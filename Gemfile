@@ -49,14 +49,15 @@ group :development do
 end
 
 group :development, :test do
+  gem 'cucumber-rails', require: false
+  gem 'cucumber-rails-training-wheels' # some pre-fabbed step definitions  
+  gem 'database_cleaner' # to clear Cucumber's test database between runs
+  gem 'capybara'         # lets Cucumber pretend to be a web browser
+  gem 'launchy'          # a useful debugging aid for user stories
   gem 'sqlite3'
   gem "pry", "~> 0.9.12.2"
-end
-
-group :test do
-  gem 'cucumber-rails', :require => false
-  gem 'database_cleaner'
-  gem 'launchy'
+  gem 'rspec-rails' 
+  gem 'simplecov'
 end
 
 gem "haml", "~> 4.0.3"
